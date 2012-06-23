@@ -1,0 +1,51 @@
+﻿@model LucidHomeMVC4.Models.WorkoutSetModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>WorkoutSetModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.When)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.When)
+            @Html.ValidationMessageFor(model => model.When)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Reps)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Reps)
+            @Html.ValidationMessageFor(model => model.Reps)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Weight)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Weight)
+            @Html.ValidationMessageFor(model => model.Weight)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title</title> 
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="@Url.Content("~/Content/jquery.mobile-1.0.1.min.css")" />
+        <link rel="stylesheet" href="@Url.Content("~/Content/Site.Mobile.css")" />
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.6.4.min.js")"></script>
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function() {
+                // Currently, jQuery Mobile's Ajax navigation does not work in all cases (e.g.,
+                // when navigating from a mobile to a non-mobile page), hence disabling it.
+                $.mobile.ajaxEnabled = false;
+            });
+        </script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.mobile-1.0.1.min.js")"></script>
+    </head> 
+<body> 
+    <div data-role="page" data-theme="a">
+        @Html.Partial("_ViewSwitcher")
+
+        <div data-role="header">
+            <h1>@ViewBag.Title</h1>
+            <div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
+                @Html.ActionLink("Home", "Index", "Home", new {data_role="button"})
+                @Html.ActionLink("About", "About", "Home", new {data_role="button"})
+                @Html.ActionLink("Contact", "Contact", "Home", new {data_role="button"})
+            </div>
+        </div>
+
+        <div data-role="content">
+            @RenderSection("featured", false)
+            @RenderBody()		
+        </div>
+    </div>
+</body>
+</html>

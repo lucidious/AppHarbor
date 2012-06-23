@@ -1,0 +1,46 @@
+﻿@model IEnumerable<LucidHomeMVC4.Models.WorkoutSetModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.When)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reps)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.When)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reps)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item._id }) |
+            @Html.ActionLink("Details", "Details", new { id=item._id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item._id })
+        </td>
+    </tr>
+}
+
+</table>

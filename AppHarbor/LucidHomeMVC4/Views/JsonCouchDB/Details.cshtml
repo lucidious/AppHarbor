@@ -1,0 +1,36 @@
+﻿@model LucidHomeMVC4.Models.WorkoutSetModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>WorkoutSetModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.When)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.When)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Reps)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Reps)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Weight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Weight)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model._id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
