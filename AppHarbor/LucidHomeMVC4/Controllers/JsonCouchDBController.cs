@@ -41,12 +41,11 @@ namespace LucidHomeMVC4.Controllers
         // POST: /JsonCouchDB/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(WorkoutSetModel ws)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                _db.SaveWorkoutSetItem(ws);
                 return RedirectToAction("Index");
             }
             catch
@@ -83,21 +82,21 @@ namespace LucidHomeMVC4.Controllers
         //
         // GET: /JsonCouchDB/Delete/5
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            return View();
+            return View(_db.GetWorkoutSetItem(id));
         }
 
         //
         // POST: /JsonCouchDB/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(WorkoutSetModel ws)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                _db.DeleteWorkoutSetItem(ws);
                 return RedirectToAction("Index");
             }
             catch

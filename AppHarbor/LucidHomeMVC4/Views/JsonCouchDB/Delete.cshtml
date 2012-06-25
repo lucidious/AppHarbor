@@ -1,0 +1,49 @@
+﻿@model LucidHomeMVC4.Models.WorkoutSetModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>WorkoutSetModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model._rev)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model._rev)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.When)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.When)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Reps)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Reps)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Weight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Weight)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model._id)
+    @Html.HiddenFor(model => model._rev)
+
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

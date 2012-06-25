@@ -51,13 +51,22 @@ namespace LucidHomeMVC4.Models
         {
             if (string.IsNullOrEmpty(ws._id))
             {
-                var response = _http.PostAsJsonAsync("/workoutdb/_all_docs?include_docs=true", ws).Result;
+                var response = _http.PostAsJsonAsync("/workoutdb/", ws).Result;
             }
             else
             {
                 var response = _http.PutAsJsonAsync("/workoutdb/" + ws._id, ws).Result;
             }
         }
+
+        public void DeleteWorkoutSetItem(WorkoutSetModel ws)
+        {
+            if (!string.IsNullOrEmpty(ws._id))
+            {
+                var response = _http.DeleteAsync("/workoutdb/" + ws._id + "?rev=" + ws._rev).Result;
+            }
+        }
+
 
         public WorkoutSetModel GetWorkoutSetItem(string id)
         {
