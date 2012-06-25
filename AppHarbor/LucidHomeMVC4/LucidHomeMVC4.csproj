@@ -135,11 +135,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JsonCouchDBController.cs" />
     <Compile Include="Controllers\ViewSwitcherController.cs" />
+    <Compile Include="Controllers\WorkoutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\WorkoutModelCouchDBService.cs" />
     <Compile Include="Models\WebAPICouchDBService.cs" />
+    <Compile Include="Models\WorkoutModel.cs" />
     <Compile Include="Models\WorkoutSetModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -245,6 +248,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

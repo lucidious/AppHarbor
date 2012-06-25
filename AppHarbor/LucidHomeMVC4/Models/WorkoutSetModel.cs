@@ -32,4 +32,41 @@ namespace LucidHomeMVC4.Models
         public int Weight { get; set; }
 
     }
+
+    public class WorkoutSetAllDocsModel
+    {
+        public int total_rows { get; set; }
+        public int offset { get; set; }
+        public List<WorkoutSetRow> rows {get; set;}
+
+        public WorkoutSetAllDocsModel()
+        {
+            this.rows = new List<WorkoutSetRow>();
+        }
+    }
+
+    public class WorkoutSetRow
+    {
+        public string id { get; set; }
+        public string key { get; set; }
+        public CouchDBrev value { get; set; }
+        public WorkoutSetModel doc { get; set; }
+
+        public WorkoutSetRow()
+        {
+            this.value = new CouchDBrev();
+            this.doc = new WorkoutSetModel();
+        }
+    }
+
+    public class CouchDBrev
+    {
+        public string rev { get; set; }
+
+        public CouchDBrev()
+        {
+        }
+    }
+
+
 }
