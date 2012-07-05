@@ -262,6 +262,7 @@
     <Content Include="Views\JsonCouchDB\Details.cshtml" />
     <Content Include="Views\JsonCouchDB\Edit.cshtml" />
     <Content Include="Views\JsonCouchDB\Delete.cshtml" />
+    <Content Include="Views\JsonCouchDB\EditorTemplates\Date.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
