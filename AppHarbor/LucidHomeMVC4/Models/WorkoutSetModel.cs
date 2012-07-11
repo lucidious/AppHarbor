@@ -16,7 +16,7 @@ namespace LucidHomeMVC4.Models
 
         [Required]
         [DataType(DataType.Date)]
-        // [DisplayFormat(DataFormatString="{0:yyyy-MM-dd}", ApplyFormatInEditMode=true)]
+        [DisplayFormat(NullDisplayText = "",DataFormatString="{0:MM/dd/yyyy}", ApplyFormatInEditMode=true)]
         [Display(Name = "Date of the workout")]
         public DateTime When { get; set; }
 

@@ -1,2 +1,9 @@
-﻿@model DateTime
-@Html.TextBox("", Model.ToString("MM/dd/yyyy"), new { @class = "date"})
+﻿@model DateTime?
+@if (Model.HasValue)
+{
+    @Html.TextBox("", Model.Value.ToString("MM/dd/yyyy"), new { @class = "date" })
+}
+else
+{
+    @Html.TextBox("", "", new { @class = "date" })
+}

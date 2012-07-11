@@ -11,7 +11,7 @@ namespace LucidHomeMVC4.Models
         [Key]
         public string _id { get; set; }
         public string _rev { get; set; }
-        public DateTime CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
         public List<WorkoutSet> Sets { get; set; }
 
         public WorkoutModel()
