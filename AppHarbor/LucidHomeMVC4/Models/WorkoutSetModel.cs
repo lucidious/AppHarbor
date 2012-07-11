@@ -18,7 +18,12 @@ namespace LucidHomeMVC4.Models
         [DataType(DataType.Date)]
         [DisplayFormat(NullDisplayText = "",DataFormatString="{0:MM/dd/yyyy}", ApplyFormatInEditMode=true)]
         [Display(Name = "Date of the workout")]
-        public DateTime When { get; set; }
+        public DateTime? When { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Exercise")]
+        public string Exercise { get; set; }
 
         [Required]
         [Range(1, 200)]
@@ -26,11 +31,31 @@ namespace LucidHomeMVC4.Models
         [Display(Name = "Number of Reps")]
         public int Reps { get; set; }
 
-        [Required]
-        [Range(1, 400)]
-        [DataType(DataType.Text)]
         [Display(Name = "Weight Used")]
-        public int Weight { get; set; }
+        public int? Weight { get; set; }
+
+        /*
+        public List<WorkoutExerciseModel> Exercises { get; set; }
+
+        public WorkoutSetModel()
+        {
+            this.Exercises = new List<WorkoutExerciseModel>();
+        }
+         */
+    }
+
+
+    public class WorkoutExerciseModel
+    {
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Exercise ID")]
+        public int Id { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Exercise Name")]
+        public string Name { get; set; }
 
     }
 

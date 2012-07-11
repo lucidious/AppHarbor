@@ -20,6 +20,30 @@
             @Html.ValidationMessageFor(model => model.When)
         </div>
 
+        @*
+        <table>
+            <tr>
+                <th>Exercise</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.Exercises)
+            {
+                <tr>
+                    <td>@item.Exercise</td>
+                    <td>&nbsp;</td>
+                </tr>
+            }
+        </table>
+        *@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Exercise)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Exercise)
+            @Html.ValidationMessageFor(model => model.Exercise)
+        </div>
+
         <div class="editor-label">
             @Html.LabelFor(model => model.Reps)
         </div>

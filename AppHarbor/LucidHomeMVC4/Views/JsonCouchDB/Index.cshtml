@@ -15,12 +15,6 @@
         <th>
             @Html.DisplayNameFor(model => model.When)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Reps)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Weight)
-        </th>
         <th></th>
     </tr>
 
@@ -28,12 +22,6 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.When)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Reps)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Weight)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item._id }) |

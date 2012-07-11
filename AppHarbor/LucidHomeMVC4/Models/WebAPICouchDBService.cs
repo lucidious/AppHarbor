@@ -66,24 +66,27 @@ namespace LucidHomeMVC4.Models
             }
         }
 
+        public static T Cast<T>(object o)
+        {
+            return (T)o;
+        }
 
         public WorkoutSetModel GetWorkoutSetItem(string id)
         {
 
             var response = _http.GetAsync("/workoutdb/" + id).Result;
             var result = response.Content.ReadAsStringAsync();
-            dynamic dyn = TextTODynamicJson(result.Result);
+            // dynamic dyn = TextTODynamicJson(result.Result);
 
-            WorkoutSetModel ws = new WorkoutSetModel();
-            ws._id = dyn._id;
-            ws._rev = dyn._rev;
-            ws.Weight = dyn.Weight;
-            ws.Reps = dyn.Reps;
-            ws.When = DateTime.Parse(dyn.When.ToString());
+            //WorkoutSetAllDocsModel result = response.Content.ReadAsAsync<WorkoutSetAllDocsModel>().Result;
+            var reader = new JsonFx.Json.JsonReader();
+            WorkoutSetModel ws = reader.Read<WorkoutSetModel>(result.Result);
 
             return ws;
         }
 
+
+        // No longer used. Direct converstion to types works better.
         public dynamic TextTODynamicJson(string val)
         {
             var reader = new JsonFx.Json.JsonReader();
